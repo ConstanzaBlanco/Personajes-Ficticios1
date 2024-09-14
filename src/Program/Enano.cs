@@ -1,7 +1,8 @@
+
 using System.Collections;
 
 namespace Program;
-public class Mago
+public class Enano
 {
     public string Nombre { get; set; }
     public int Vida { get; set; }
@@ -13,7 +14,7 @@ public class Mago
     public Escudo Escudo { get; private set; }
     public ArrayList Items { get; set; }
     
-    public Mago(string nombre, int vida, int ataque, int defensa)
+    public Enano(string nombre, int vida, int ataque, int defensa)
     {
         Nombre = nombre;
         Vida = vida;
