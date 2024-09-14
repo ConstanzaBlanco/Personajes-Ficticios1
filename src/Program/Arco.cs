@@ -20,7 +20,7 @@ public class Arco
         this.flechas = 3;
     }
 
-    public double Usar()
+    public double Usar(Personaje name)
     {
         if (this.flechas>0)
         {
@@ -30,7 +30,7 @@ public class Arco
         {
             this.danio = 0;
         }
-        
+        Console.WriteLine($"A {name.Nombre} le quedan {this.flechas} flechas");
         return this.danio;
     }
 }
