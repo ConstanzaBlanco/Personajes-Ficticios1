@@ -19,7 +19,7 @@ public class Mago
         Vida = vida;
         Ataque = ataque;
         Defensa = defensa;
-        Items = new ArrayList {arco,espada,escudo };
+        Items = new ArrayList();
     }
     
     public int GetVida()
