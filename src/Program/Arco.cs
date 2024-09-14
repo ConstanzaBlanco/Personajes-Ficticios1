@@ -2,14 +2,14 @@
 
 public class Arco
 {
-    private double danio;
-    private double flechas;
+    private int danio;
+    private int flechas;
 
-    public double Flechas
+    public int Flechas
     {
         get { return this.flechas; }
     }
-    public double Danio
+    public int Danio
     {
         get { return this.danio; }
     }
@@ -20,7 +20,7 @@ public class Arco
         this.flechas = 3;
     }
 
-    public double Usar(Personaje name)
+    public int Usar(Personaje name)
     {
         if (this.flechas>0)
         {

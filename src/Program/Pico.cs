@@ -2,9 +2,9 @@
 
 public class Pico
 {
-    private double danio;
+    private int danio;
 
-    public double Danio
+    public int Danio
     {
         get { return this.danio; }
     }

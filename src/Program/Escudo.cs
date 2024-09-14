@@ -2,9 +2,9 @@
 
 public class Escudo
 {
-    private double proteccion;
+    private int proteccion;
 
-    public double Proteccion
+    public int Proteccion
     {
         get { return this.proteccion; }
     }

@@ -2,14 +2,14 @@
 
 public class Baston
 {
-    private double danio;
-    private double usar;
+    private int danio;
+    private int usar;
 
-    public double Danio
+    public int Danio
     {
         get {return this.danio; }
     }
-    public double Usar()
+    public int Usar()
     {
         if (this.danio<30)
         {

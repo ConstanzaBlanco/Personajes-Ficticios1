@@ -2,9 +2,9 @@
 
 public class Pocion
 {
-    private double aumento_vida;
+    private int aumento_vida;
 
-    public double Aumento_Vida
+    public int Aumento_Vida
     {
         get {return this.aumento_vida; }
         

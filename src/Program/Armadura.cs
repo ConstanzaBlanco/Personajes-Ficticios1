@@ -2,15 +2,15 @@
 
 public class Armadura
 {
-    private double proteccion;
-    private double usos;
+    private int proteccion;
+    private int usos;
 
-    public double Proteccion
+    public int Proteccion
     {
         get { return this.proteccion; }
     }
 
-    public double Usar()
+    public int Usar(Personaje name)
     {
         if (this.usos <= 2)
         {
@@ -18,11 +18,16 @@ public class Armadura
             this.usos += 1;
         }
 
+        if (this.proteccion <= 0)
+        {
+            Console.WriteLine($"A {name.Nombre} se le ha roto la Armadura");
+            this.proteccion = 0;
+        }
         return this.proteccion;
     }
     public Armadura()
     {
-        this.proteccion = 40;
+        this.proteccion = 60;
         this.usos = 0;
     }
 }
