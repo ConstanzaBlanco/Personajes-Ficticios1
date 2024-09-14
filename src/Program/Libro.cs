@@ -11,11 +11,11 @@ public class Libro
         
     }
 
-    public double Usar(Accion jugadas)
+    public double Usar()
     {
         if (this.danio<30)
         {
-            this.danio += jugadas.cant_acciones()*2;
+            this.danio += 5;
         }
 
         return this.danio;
