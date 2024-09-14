@@ -1,80 +1,77 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
 
-namespace RoleplayGame;
-
-public class Personaje
+namespace RoleplayGame
 {
-    private string nombre;
-    public string Nombre { get; }
-
-    private string tipo;
-    public string Tipo { get; }
-    private int vida;
-    public int Vida { get; set; }
-    
-    private int ataque;
-    public int Ataque { get; set; }
-    
-    private int defensa;
-    public int Defensa { get; set; }
-
-    private List<object> itemsutilizables;
-    public List<object> ItemsUtilizables { get; }
-
-    private List<object> inventario;
-    
-    public List<object> Inventario { get; }
-    
-    public Personaje(string nombre, int tipo)
+    public class Personaje
     {
-        this.Nombre = nombre;
-        if (tipo == 1) //Mago
+        public string Nombre { get; }
+        public string tipo {get; }
+        public int Vida { get; set; }
+        public int Ataque { get; set; }
+        public int Defensa { get; set; }
+        
+        // Inicializa las listas de objetos
+        public List<object> ItemsUtilizables { get; } = new List<object>();
+        public List<object> Inventario { get; } = new List<object>();
+        
+        public Personaje(string nombre, int tipo)
         {
-            Mago magonuevo = new Mago();
-            this.vida = magonuevo.VidaMago();
-            this.ataque = magonuevo.AtaqueMago();
-            this.defensa = magonuevo.DefensaMago();
-            this.itemsutilizables = magonuevo.ItemsMago();
-            this.tipo = "Mago";
+            this.Nombre = nombre;
+            
+            if (tipo == 1) // Mago
+            {
+                Mago magonuevo = new Mago();
+                this.Vida = magonuevo.VidaMago();
+                this.Ataque = magonuevo.AtaqueMago();
+                this.Defensa = magonuevo.DefensaMago();
+                this.ItemsUtilizables.AddRange(magonuevo.ItemsMago());
+                this.tipo = "Mago";
+            }
+            else if (tipo == 2) // Elfo
+            {
+                Elfo elfonuevo = new Elfo();
+                this.Vida = elfonuevo.VidaElfo();
+                this.Ataque = elfonuevo.AtaqueElfo();
+                this.Defensa = elfonuevo.DefensaElfo();
+                
+                // Agrega los ítems del Elfo a la lista
+                this.ItemsUtilizables.AddRange(elfonuevo.ItemsElfo());
+                this.tipo = "Elfo";
+            }
+            else if (tipo == 3) // Enano
+            {
+                Enano enanonuevo = new Enano();
+                this.Vida = enanonuevo.VidaEnano();
+                this.Ataque = enanonuevo.AtaqueEnano();
+                this.Defensa = enanonuevo.DefensaEnano();
+                
+                // Agrega los ítems del Enano a la lista
+                this.ItemsUtilizables.AddRange(enanonuevo.ItemsEnano());
+                this.tipo = "Enano";
+            }
+            else
+            {
+                throw new ArgumentException("Tipo de personaje no válido.");
+            }
         }
-        else if (tipo == 2) //Elfo
-        {
-            Elfo elfonuevo = new Elfo();
-            this.vida = elfonuevo.VidaElfo();
-            this.ataque = elfonuevo.AtaqueElfo();
-            this.defensa = elfonuevo.DefensaElfo();
-            this.itemsutilizables = elfonuevo.ItemsElfo();
-            this.tipo = "Elfo";
-        }
-        else if  (tipo == 3) //Enano
-        {
-            Enano enanonuevo = new Enano();
-            this.vida = enanonuevo.VidaEnano();
-            this.ataque = enanonuevo.AtaqueEnano();
-            this.defensa = enanonuevo.DefensaEnano();
-            this.itemsutilizables = enanonuevo.ItemsEnano();
-            this.tipo = "Enano";
-        }
-        else
-        {
-            throw new ArgumentException("Tipo de personaje no válido.");
-        }
-    }
 
-    public void AgregarItem(object item)
-    {
-        if (ItemsUtilizables.Contains(item))
+        public void AgregarItem(object item)
         {
-            Inventario.Add(item);
+            foreach (object itemusable in ItemsUtilizables)
+            {
+                if (itemusable.GetType() == item.GetType())
+                {
+                    Inventario.Add(item);
+                }
+            }
         }
-    }
 
-    public void QuitarItem(object item)
-    {
-
-        if (this.inventario.Contains(item))
+        public void QuitarItem(object item)
         {
-            Inventario.Remove(item);
+            if (this.Inventario.Contains(item))
+            {
+                Inventario.Remove(item);
+            }
         }
     }
 }
