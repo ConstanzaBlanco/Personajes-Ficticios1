@@ -2,15 +2,16 @@
 
 public class Pocion
 {
-    private int vida;
-    
-    public int GetVida()
+    private int aumento_vida;
+
+    public int GetVida
     {
-        return this.vida;
+        get {return this.aumento_vida; }
+        
     }
 
     public Pocion()
     {
-        this.vida = 30;
+        this.aumento_vida = 30;
     }
 }
