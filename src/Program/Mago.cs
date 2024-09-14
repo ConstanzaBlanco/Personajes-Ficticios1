@@ -1,3 +1,6 @@
+using System.Collections;
+
+namespace Program;
 public class Mago
 {
     public string Nombre { get; set; }
@@ -16,7 +19,7 @@ public class Mago
         Vida = vida;
         Ataque = ataque;
         Defensa = defensa;
-        Items = new ArrayList { arco, espada, escudo };
+        Items = new ArrayList {arco,espada,escudo };
     }
     
     public int GetVida()
@@ -31,31 +34,31 @@ public class Mago
         Items.Add(escudo);
     }
    
-    public int GetAtaquefinal()
+    public double GetAtaquefinal()
     {
-        int ataqueTotal = Ataque;
+        double ataqueTotal = Ataque;
         foreach (var item in Items)
         {
             if (item is Arco arco)
             {
-                ataqueTotal += arco.Ataque;
+                ataqueTotal += arco.Danio;
             }
             else if (item is Espada espada)
             {
-                ataqueTotal += espada.Ataque;
+                ataqueTotal += espada.Danio;
             }
         }
         return ataqueTotal;
     }
     
-    public int GetDefensfinal()
+    public double GetDefensfinal()
     {
-        int defensaTotal = Defensa;
+        double defensaTotal = Defensa;
         foreach (var item in Items)
         {
             if (item is Escudo escudo)
             {
-                defensaTotal += escudo.Defensa;
+                defensaTotal += escudo.Proteccion;
             }
         }
         return defensaTotal;
