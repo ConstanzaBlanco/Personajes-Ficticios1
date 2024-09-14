@@ -1,16 +1,18 @@
-﻿namespace Program;
+﻿namespace RoleplayGame;
 
 public class Armadura
 {
-    private double proteccion;
-    private double usos;
+    private int proteccion;
+    private int usos;
+    private int ataque;
+    private int vida;
 
-    public double Proteccion
+    public int Proteccion
     {
         get { return this.proteccion; }
     }
 
-    public double Usar()
+    public int GetDefensa(Personaje name)
     {
         if (this.usos <= 2)
         {
@@ -18,11 +20,29 @@ public class Armadura
             this.usos += 1;
         }
 
+        if (this.proteccion <= 0)
+        {
+            Console.WriteLine($"A {name.Nombre} se le ha roto la Armadura");
+            this.proteccion = 0;
+        }
         return this.proteccion;
     }
+
+    public int GetAtaque()
+    {
+        return this.ataque;
+    }
+
+    public int GetVida()
+    {
+        return this.vida;
+    }
+    
     public Armadura()
     {
-        this.proteccion = 40;
+        this.proteccion = 60;
         this.usos = 0;
+        this.ataque = 0;
+        this.vida = 0;
     }
 }

@@ -1,15 +1,15 @@
-﻿namespace Program;
+﻿namespace RoleplayGame;
 
 public class Baston
 {
-    private double danio;
-    private double usar;
-
-    public double Danio
+    private int danio;
+    private int vida;
+    private int defensa;
+    public int Danio
     {
         get {return this.danio; }
     }
-    public double Usar()
+    public int GetAtaque()
     {
         if (this.danio<30)
         {
@@ -19,6 +19,15 @@ public class Baston
         return this.danio;
     }
 
+    public int GetDefensa()
+    {
+        return this.defensa;
+    }
+
+    public int GetVida()
+    {
+        return this.vida;
+    }
     public Baston()
     {
         this.danio = 15;

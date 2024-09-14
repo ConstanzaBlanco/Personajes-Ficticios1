@@ -1,67 +1,36 @@
-
 using System.Collections;
 
-namespace Program;
+namespace RoleplayGame;
 public class Enano
 {
-    public string Nombre { get; set; }
-    public int Vida { get; set; }
-    public int Ataque { get; set; }
-    public int Defensa { get; set; }
-    
-    public Arco Arco { get; private set; }
-    public Espada Espada { get; private set; }
-    public Escudo Escudo { get; private set; }
-    public ArrayList Items { get; set; }
-    
-    public Enano(string nombre, int vida, int ataque, int defensa)
+    private int vida = 120;
+
+    public int VidaEnano()
     {
-        Nombre = nombre;
-        Vida = vida;
-        Ataque = ataque;
-        Defensa = defensa;
-        Items = new ArrayList();
+        return this.vida;
     }
-    
-    public int GetVida()
+    private int ataque = 15;
+
+    public int AtaqueEnano()
     {
-        return Vida; 
+        return this.ataque;
     }
-    
-    public void AgregarItems(Arco arco, Espada espada, Escudo escudo)
+
+    private int defensa = 10;
+    public int DefensaEnano()
     {
-        Items.Add(arco);
-        Items.Add(espada);
-        Items.Add(escudo);
+        return this.defensa;
     }
-   
-    public double GetAtaquefinal()
+
+    private List<object> ItemsUtilizables = new List<object>
     {
-        double ataqueTotal = Ataque;
-        foreach (var item in Items)
-        {
-            if (item is Arco arco)
-            {
-                ataqueTotal += arco.Danio;
-            }
-            else if (item is Espada espada)
-            {
-                ataqueTotal += espada.Danio;
-            }
-        }
-        return ataqueTotal;
-    }
-    
-    public double GetDefensfinal()
+        new Daga(),
+        new Pico(),
+        new Armadura()
+    };
+
+    public List<object> ItemsEnano()
     {
-        double defensaTotal = Defensa;
-        foreach (var item in Items)
-        {
-            if (item is Escudo escudo)
-            {
-                defensaTotal += escudo.Proteccion;
-            }
-        }
-        return defensaTotal;
+        return this.ItemsUtilizables;
     }
 }

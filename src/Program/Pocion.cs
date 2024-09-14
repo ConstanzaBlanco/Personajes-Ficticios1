@@ -1,17 +1,16 @@
-﻿namespace Program;
+﻿namespace RoleplayGame;
 
 public class Pocion
 {
-    private double aumento_vida;
-
-    public double Aumento_Vida
+    private int vida;
+    
+    public int GetVida()
     {
-        get {return this.aumento_vida; }
-        
+        return this.vida;
     }
 
     public Pocion()
     {
-        this.aumento_vida = 30;
+        this.vida = 30;
     }
 }

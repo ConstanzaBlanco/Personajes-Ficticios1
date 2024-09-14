@@ -1,4 +1,4 @@
-﻿namespace Program;
+﻿namespace RoleplayGame;
 
 public class impresion
 {

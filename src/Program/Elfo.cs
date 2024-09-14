@@ -1,71 +1,36 @@
-﻿namespace Program;
-using System.Collections;
+﻿using System.Collections;
 
+namespace RoleplayGame;
 public class Elfo
 {
-    public string Nombre { get; set; }
-    public int Vida { get; set; }
-    public int Ataque { get; set; }
-    public int Defensa { get; set; }
+    private int vida = 90;
 
-    public Arco Arco { get; private set; }
-    public Espada Espada { get; private set; }
-    public Escudo Escudo { get; private set; }
-    public ArrayList Items { get; set; }
-    
-    public Elfo(string nombre, int vida, int ataque, int defensa)
+    public int VidaElfo()
     {
-        Nombre = nombre;
-        Vida = vida;
-        Ataque = ataque;
-        Defensa = defensa;
-        Items = new ArrayList { arco, espada, escudo };
+        return this.vida;
+    }
+    private int ataque = 15;
+
+    public int AtaqueElfo()
+    {
+        return this.ataque;
     }
 
-    public void AgregarItems(Arco arco, Espada espada, Escudo escudo)
+    private int defensa = 5;
+    public int DefensaElfo()
     {
-        Items.Add(arco);
-        Items.Add(espada);
-        Items.Add(escudo);
-    }
-    
-    
-    public double GetAtaquefinal()
-    {
-        double ataqueTotal = Ataque;
-        foreach (var item in Items)
-        {
-            if (item is Arco arco)
-            {
-                ataqueTotal += arco.Ataque;
-            }
-            else if (item is Espada espada)
-            {
-                ataqueTotal += espada.Ataque;
-            }
-        }
-        return ataqueTotal;
+        return this.defensa;
     }
 
-    // Método para calcular la defensa total
-    public int GetDefensfinal()
+    private List<object> ItemsUtilizables = new List<object>
     {
-        int defensaTotal = Defensa;
-        foreach (var item in Items)
-        {
-            if (item is Escudo escudo)
-            {
-                defensaTotal += escudo.Defensa;
-            }
-        }
-        return defensaTotal;
-    }
-    
-    public int GetVida()
+        new Arco(),
+        new Espada(),
+        new Escudo()
+    };
+
+    public List<object> ItemsElfo()
     {
-        return Vida; 
+        return this.ItemsUtilizables;
     }
 }
-    
-
-

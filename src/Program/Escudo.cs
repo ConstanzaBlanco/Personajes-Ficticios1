@@ -1,16 +1,34 @@
-﻿namespace Program;
+﻿namespace RoleplayGame;
 
 public class Escudo
 {
-    private double proteccion;
+    private int danio;
+    private int defensa;
+    private int vida;
 
-    public double Proteccion
+    public int Defensa
     {
-        get { return this.proteccion; }
+        get { return this.defensa; }
+    }
+    public int GetAtaque()
+    {
+        return this.danio;
+    }
+
+    public int GetDefensa()
+    {
+        return this.defensa;
+    }
+
+    public int GetVida()
+    {
+        return this.vida;
     }
 
     public Escudo()
     {
-        this.proteccion = 30;
+        this.defensa = 30;
+        this.danio = 0;
+        this.vida = 0;
     }
 }
