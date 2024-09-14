@@ -1,4 +1,1 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-
-namespace Program;
+﻿Console.WriteLine("Hello, World!");
