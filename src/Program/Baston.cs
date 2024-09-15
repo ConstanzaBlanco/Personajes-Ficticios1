@@ -3,8 +3,6 @@
 public class Baston
 {
     private int danio;
-    private int vida;
-    private int defensa;
     public int Danio
     {
         get {return this.danio; }
@@ -17,16 +15,6 @@ public class Baston
         }
 
         return this.danio;
-    }
-
-    public int GetDefensa()
-    {
-        return this.defensa;
-    }
-
-    public int GetVida()
-    {
-        return this.vida;
     }
     public Baston()
     {

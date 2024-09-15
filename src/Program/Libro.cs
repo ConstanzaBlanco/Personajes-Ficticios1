@@ -3,8 +3,6 @@
 public class Libro
 {
     private int danio;
-    private int defensa;
-    private int vida;
     private List<string> Hechizos = new List<string>();
     public int Danio
     {
@@ -26,7 +24,5 @@ public class Libro
     public Libro()
     {
         this.danio = 15;
-        this.defensa = 0;
-        this.vida = 0;
     }
 }

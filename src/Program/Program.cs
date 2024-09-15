@@ -1,6 +1,4 @@
-﻿using ARoleplayGame;
-
-namespace RoleplayGame
+﻿namespace RoleplayGame
 {
     class Program
     {
@@ -25,7 +23,7 @@ namespace RoleplayGame
             //---------------------------------------------------------------
             //---------------------------------------------------------------
             //tipo 3 = Enano
-            Personaje Enano_1 = new Personaje("Zelda", 3);
+            Personaje Enano_1 = new Personaje("Link", 3);
             Daga Dagadezelda = new Daga();
             Armadura armadurazelda = new Armadura();
             Enano_1.AgregarItem(Dagadezelda);

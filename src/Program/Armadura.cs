@@ -4,8 +4,6 @@ public class Armadura
 {
     private int proteccion;
     private int usos;
-    private int ataque;
-    private int vida;
 
     public int Proteccion
     {
@@ -27,22 +25,10 @@ public class Armadura
         }
         return this.proteccion;
     }
-
-    public int GetAtaque()
-    {
-        return this.ataque;
-    }
-
-    public int GetVida()
-    {
-        return this.vida;
-    }
     
     public Armadura()
     {
         this.proteccion = 60;
         this.usos = 0;
-        this.ataque = 0;
-        this.vida = 0;
     }
 }

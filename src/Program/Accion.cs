@@ -1,6 +1,5 @@
-﻿using RoleplayGame;
-
-namespace ARoleplayGame;
+﻿
+namespace RoleplayGame;
 
 public class Accion
 {
