@@ -129,6 +129,7 @@
             //---------------------------------------------------------------
             //---------------------------------------------------------------
             //Pelea3
+            Console.WriteLine("PELEA CON ARCO");
             Accion Pelea3 = new Accion();
             ImpresionEstadoPersonaje.ImprimirEstado(Enano_2);
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_2);
@@ -147,6 +148,8 @@
             Pelea3._Atacar_(Elfo_2,Enano_2,Arco_de_luz);
             ImpresionEstadoPersonaje.ImprimirEstado(Enano_2);
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_2);
+            Pelea3._Atacar_(Elfo_2,Enano_2,Arco_de_luz);
+            ImpresionEstadoPersonaje.ImprimirEstado(Enano_2);
             Pelea3._Atacar_(Enano_2,Elfo_2,Diamante);
             //---------------------------------------------------------------
             //---------------------------------------------------------------

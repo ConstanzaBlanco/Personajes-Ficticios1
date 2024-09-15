@@ -21,7 +21,6 @@ public class Atacar
                     defensor.Vida = 0;
                     Console.WriteLine($"{defensor.Nombre} ha sido atacado por {atacante.Nombre}");
                     Console.WriteLine($"{defensor.Nombre} ha muerto por {atacante.Nombre}");
-                    //Agregar estado muerto
                 }
                 else if (defensor.Defensa <= ataque)
                 {

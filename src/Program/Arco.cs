@@ -18,12 +18,14 @@ public class Arco
         if (this.flechas>0)
         {
             this.flechas -= 1;
+            Console.WriteLine($"A {name.Nombre} le quedan {this.flechas} flechas");
         }
         if(this.flechas<=0)
         {
             this.danio = 0;
+            Console.WriteLine($"A {name.Nombre} ya no le quedan flechas, ha dado un puñetazo");
         }
-        Console.WriteLine($"A {name.Nombre} le quedan {this.flechas} flechas");
+        
         return this.danio;
     }
     
