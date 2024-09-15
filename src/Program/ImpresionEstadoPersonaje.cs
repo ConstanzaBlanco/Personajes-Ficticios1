@@ -2,7 +2,7 @@
 
 public class ImpresionEstadoPersonaje
 {
-    public void ImprimirEstado(Personaje personaje)
+    public static void ImprimirEstado(Personaje personaje)
     {
         Console.WriteLine($"El personaje {personaje.Nombre} tiene las siguientes caracteristicas:");
         Console.WriteLine($"Es de tipo: {personaje.tipo}");
