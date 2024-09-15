@@ -23,7 +23,7 @@
             //---------------------------------------------------------------
             //---------------------------------------------------------------
             //tipo 3 = Enano
-            Personaje Enano_1 = new Personaje("Link", 3);
+            Personaje Enano_1 = new Personaje("Aragorn", 3);
             Daga Dagadezelda = new Daga();
             Armadura armadurazelda = new Armadura();
             Enano_1.AgregarItem(Dagadezelda);
@@ -77,9 +77,14 @@
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_1);
             ImpresionEstadoPersonaje.ImprimirEstado(Mago_1);
             Pelea1.Atacar(Elfo_1,Mago_1,Espadadefin);
-            Pelea1.Atacar(Mago_1,Elfo_1,baston_viejo);
+            Pelea1.Atacar(Mago_1,Elfo_1,librito);
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_1);
             ImpresionEstadoPersonaje.ImprimirEstado(Mago_1);
+            librito.AgregarHechizos("Accio");                 //Con esos hechizos Aumento el poder de libro en 5 (+1 por cada hechizo)
+            librito.AgregarHechizos("Expecto Patronum");
+            librito.AgregarHechizos("Incendio");
+            librito.AgregarHechizos("Evanseco");
+            librito.AgregarHechizos("Petrificus Totalus");
             Pelea1.Atacar(Mago_1,Elfo_1,librito);
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_1);
             Pelea1.Defender(Elfo_1,EscudoDelCap);
