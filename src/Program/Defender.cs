@@ -9,7 +9,7 @@ public class Defender
         if (defensor.Inventario.Contains(item))
         {
             int defensa = calculos.GetDefensaTotal(defensor, item);
-            defensor.Defensa += defensa;
+            defensor.Defensa = defensa;
             Console.WriteLine($"{defensor.Nombre} ha activado su defensa");
         }
         else

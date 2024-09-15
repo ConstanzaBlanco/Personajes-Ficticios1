@@ -87,10 +87,8 @@
             librito.AgregarHechizos("Petrificus Totalus");
             Pelea1._Atacar_(Mago_1,Elfo_1,librito);
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_1);
-            Console.WriteLine("FIJARSE DEFENSA");
             Pelea1._Defender_(Elfo_1,EscudoDelCap);
             Pelea1._Atacar_(Mago_1,Elfo_1,baston_viejo);
-            Console.WriteLine("ESTADO DESPUES  DE DEFENSA");
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_1);
             ImpresionEstadoPersonaje.ImprimirEstado(Mago_1);
             //---------------------------------------------------------------
@@ -110,7 +108,6 @@
             Pelea2._Defender_(Mago_2,armadurazelda);
             Pelea2._Atacar_(Mago_2,Enano_1,bastondemadera);
             Pelea2._Defender_(Enano_1,armadurazelda);
-            Console.WriteLine("Fijarse aca");
             ImpresionEstadoPersonaje.ImprimirEstado(Mago_2);
             Pelea2._Curar_(Mago_2,bastondemadera);
             ImpresionEstadoPersonaje.ImprimirEstado(Mago_2);
@@ -160,13 +157,11 @@
             Pelea4._Atacar_(Elfo_3, Elfo_4, Magico);
             Pelea4._Atacar_(Elfo_4,Elfo_3,Seis_Sabios);
             Pelea4._Atacar_(Elfo_3,Elfo_4,Magico);
-            Console.WriteLine("Fijarse acá");
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_3);
             Pelea4._Atacar_(Elfo_4,Elfo_3,Ancestral);
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_3);
             Pelea4._Atacar_(Elfo_3,Elfo_4,Magico);
             Pelea4._Defender_(Elfo_3, Ancestral); 
-            Console.WriteLine("Fijarse Acá2");
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_4);
             Pelea4._Atacar_(Elfo_4,Elfo_4,Seis_Sabios);
             ImpresionEstadoPersonaje.ImprimirEstado(Elfo_4);

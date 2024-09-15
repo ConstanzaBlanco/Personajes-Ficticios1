@@ -41,28 +41,18 @@ public class CalculosDeCombate
         }
         return ActualAttack;
     }
-    public int GetDefensaTotal(Personaje personaje,object arma)
+    public int GetDefensaTotal(Personaje personaje,object item)
     {
         int DefensaActual = 0;
-        foreach (object item in personaje.ItemsUtilizables)
+        if (item.GetType() == typeof(Armadura))
         {
-            if (item == arma)
-            {
-                if (arma.GetType() == typeof(Armadura))
-                {
-                    Armadura armadura = (Armadura)arma;
-                    DefensaActual = armadura.GetDefensa(personaje);
-                }
-                else if (arma.GetType() == typeof(Escudo))
-                {
-                    Escudo escudo = (Escudo)arma;
-                    DefensaActual = escudo.GetDefensa();
-                }
-            }
+            Armadura armadura = (Armadura)item;
+            DefensaActual += armadura.GetDefensa(personaje);
         }
-        if (DefensaActual == 0)
-        {
-            DefensaActual = personaje.Defensa;
+        else if (item.GetType() == typeof(Escudo))
+        { 
+            Escudo escudo = (Escudo)item;
+            DefensaActual += escudo.GetDefensa();
         }
         return DefensaActual;
     }
