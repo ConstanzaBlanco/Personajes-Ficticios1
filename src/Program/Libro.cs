@@ -5,6 +5,7 @@ public class Libro
     private int danio;
     private int defensa;
     private int vida;
+    private List<string> Hechizos = new List<string>();
     public int Danio
     {
         get {return this.danio; }
@@ -12,22 +13,14 @@ public class Libro
     }
     public int GetAtaque()
     {
-        if (this.danio<30)
-        {
-            this.danio += 5;
-        }
-
+        int cant_hechizos = Hechizos.Count;
+        this.danio += cant_hechizos;
         return this.danio;
     }
 
-    public int GetDefensa()
+    public void AgregarHechizos(string hechizo)
     {
-        return this.defensa;
-    }
-
-    public int GetVida()
-    {
-        return this.vida;
+        Hechizos.Add(hechizo);
     }
 
     public Libro()
