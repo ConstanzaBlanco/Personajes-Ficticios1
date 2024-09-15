@@ -11,7 +11,7 @@ public class ImpresionEstadoPersonaje
         Console.WriteLine($"Tiene actualmente {personaje.Defensa} de defensa");
         foreach (object item in personaje.Inventario)
         {
-            Console.WriteLine($"Tiene a su disposición el item: {item.GetType().ToString()}");
+            Console.WriteLine($"Tiene a su disposición el item: {item.GetType().Name}");
         }
         Console.WriteLine("");
     }

@@ -74,7 +74,7 @@ public class CalculosDeCombate
             if (arma.GetType() == typeof(Pocion))
             {
                 Pocion pocion = (Pocion)arma;
-                VidaActual = pocion.GetVida + personaje.Vida;
+                VidaActual = pocion.GetVida;
             }
         }
         if (VidaActual == 0)
