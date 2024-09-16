@@ -1,5 +1,5 @@
 ﻿namespace RoleplayGame;
-
+//Esta clase Armadura se diferencia de las otras en que con cada uso se le resta 20 de proteccion a la proteccion original.
 public class Armadura
 {
     private int proteccion;

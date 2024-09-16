@@ -1,8 +1,7 @@
-﻿
-namespace RoleplayGame;
+﻿namespace RoleplayGame;
 
 //Esta clase la utilizamos para llamar a las otras clases de Atacar,Defender y Curar, ya que estas clases son acciones
-//y queda mejor organizado que las mismas seas llamadas dentro de la claase Accion.
+//y queda mejor organizado que las mismas seas llamadas dentro de la clase Accion.
 public class Accion
 {
     private CalculosDeCombate calculos = new CalculosDeCombate();

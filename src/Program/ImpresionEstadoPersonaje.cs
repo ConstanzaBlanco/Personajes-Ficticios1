@@ -1,5 +1,6 @@
 ﻿namespace RoleplayGame;
-
+//Esta clase la implementamos para poder observar el estado actual del personaje lo cual puede ser útil para la depuración,
+//pruebas, o para proporcionar una actualización al usuario.
 public class ImpresionEstadoPersonaje
 {
     public static void ImprimirEstado(Personaje personaje)
@@ -9,7 +10,7 @@ public class ImpresionEstadoPersonaje
         Console.WriteLine($"Tiene actualmente {personaje.Vida} de vida");
         Console.WriteLine($"Tiene actualmente {personaje.Ataque} de daño físico base");
         Console.WriteLine($"Tiene actualmente {personaje.Defensa} de defensa");
-        foreach (object item in personaje.Inventario)
+        foreach (object item in personaje.GetInventario())
         {
             Console.WriteLine($"Tiene a su disposición el item: {item.GetType().Name}");
         }

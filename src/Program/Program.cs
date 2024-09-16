@@ -1,4 +1,6 @@
 ﻿namespace RoleplayGame
+//En esta clase creamos los personajes, realizamos las acciones e imprimimos el estado de los personajes para obvservar si las
+//demas clases funcionan efectivamente.
 {
     class Program
     {

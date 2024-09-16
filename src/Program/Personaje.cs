@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace RoleplayGame
+﻿namespace RoleplayGame
+//Creamos esta clase para que tome los valores iniciales de Vida, ataque y defensa del Personaje dependiendo de su tipo.
+//Siendo 1=Mago, 2=Elfo, y 3=Enano.
+//En esta clase tambien podemos modificar el inventario del personaje accediendo a laClase inventario y sus metodos.
+//Cumple con SRP ya que tien la unica responsabilidad de conocer el tipo de personaje, sus caracteristicas y su inventario.
 {
     public class Personaje
     {
@@ -12,7 +14,7 @@ namespace RoleplayGame
         
         // Inicializa las listas de objetos
         public List<object> ItemsUtilizables { get; } = new List<object>();
-        public List<object> Inventario { get; } = new List<object>();
+        public Inventario Inventario { get; } = new Inventario();
         
         public Personaje(string nombre, int tipo)
         {
@@ -57,21 +59,16 @@ namespace RoleplayGame
 
         public void AgregarItem(object item)
         {
-            foreach (object itemusable in ItemsUtilizables)
-            {
-                if (itemusable.GetType() == item.GetType())
-                {
-                    Inventario.Add(item);
-                }
-            }
+            Inventario.AgregarItem_(item);
         }
 
         public void QuitarItem(object item)
         {
-            if (this.Inventario.Contains(item))
-            {
-                Inventario.Remove(item);
-            }
+            Inventario.QuitarItem_(item);
+        }
+        public List<object> GetInventario()
+        {
+            return Inventario.GetInventario();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿namespace RoleplayGame;
-
+//Este item solo infringe daño, no cura ni defiende.
 public class Espada
 {
     private int danio;

@@ -1,5 +1,5 @@
 ﻿namespace RoleplayGame;
-
+//Esta clase la separamos de las demas acciones para que cumpla correctamente con SRP, al solo enfocarse en la accion Curar.
 public class Curar
 {
     private CalculosDeCombate calculos = new CalculosDeCombate();
@@ -8,7 +8,7 @@ public class Curar
     {
         int salud = calculos.GetVida(defensor, item);
 
-        if (defensor.Inventario.Contains(item))
+        if (defensor.GetInventario().Contains(item))
         {
             if (item.GetType() == typeof(Pocion))
             {

@@ -1,5 +1,6 @@
 ﻿namespace RoleplayGame;
-
+//Decidimos separar cada item en una clase diferente ya que tienen caracteristicas distintas, por ejemplo esta clase Arco
+//depende de saber cuantas flechas le quedan para saber si el daño sera infringido o no.
 public class Arco
 {
     private int danio;
@@ -23,7 +24,7 @@ public class Arco
         if(this.flechas<=0)
         {
             this.danio = 0;
-            Console.WriteLine($"A {name.Nombre} ya no le quedan flechas, ha dado un puñetazo");
+            Console.WriteLine($"A {name.Nombre} ya no le quedan flechas, utiliza unicamente su Arco");
         }
         
         return this.danio;

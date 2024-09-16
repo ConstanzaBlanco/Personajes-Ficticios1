@@ -1,6 +1,5 @@
-using System.Collections;
-
 namespace RoleplayGame;
+//Al Mago lo separamos de Elfo y Enano, ya que tiene carateristicas iniciales diferentes y utilizan items diferentes.
 public class Mago
 {
     private int vida = 80;

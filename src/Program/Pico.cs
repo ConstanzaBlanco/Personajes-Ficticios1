@@ -1,5 +1,5 @@
 ﻿namespace RoleplayGame;
-
+//Este item solo realiza daño al ser utilizado, no se desgasta ni gana poder con cada uso
 public class Pico
 {
     private int danio;
