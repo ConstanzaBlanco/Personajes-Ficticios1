@@ -1,5 +1,5 @@
 ﻿namespace RoleplayGame;
-//Separamos los Diferentes calculos de combate en Ataque, Vida y Defensa, para cumplir correctametente con el principio de SRP.
+//Separamos los Diferentes calculos de combate en Ataque, Vida y Defensa, para cumplir correctametente con el principio de SRP y una mayor organizacion.
 public class Calculo_de_Ataque
 {
     public int GetAtaqueFinal_(Personaje personaje, object arma)

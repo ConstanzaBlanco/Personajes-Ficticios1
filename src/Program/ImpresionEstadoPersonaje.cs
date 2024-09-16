@@ -1,6 +1,6 @@
 ﻿namespace RoleplayGame;
 //Esta clase la implementamos para poder observar el estado actual del personaje lo cual puede ser útil para la depuración,
-//pruebas, o para proporcionar una actualización al usuario.
+//pruebas, o para proporcionar una actualización al usuario, ademas lo separamos en una clase para cumplir con SRP.
 public class ImpresionEstadoPersonaje
 {
     public static void ImprimirEstado(Personaje personaje)

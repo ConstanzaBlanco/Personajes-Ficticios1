@@ -1,5 +1,5 @@
 ﻿namespace RoleplayGame;
-//Separamos el Calculo de Defensa de los calculos de Vida y Ataque
+//Separamos el Calculo de Defensa de los calculos de Vida y Ataque para tener un mejor orden y cumplir con SRP.
 public class Calculo_de_Defensa
 {
     public int GetDefensaFinal_(Personaje personaje,object item)

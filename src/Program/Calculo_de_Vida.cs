@@ -5,12 +5,15 @@ public class Calculo_de_Vida
     public int GetVida_(Personaje personaje, object arma)
     {
         int VidaActual = 0;
-        foreach (object item in personaje.ItemsUtilizables)
+        if (personaje.Inventario.GetInventario().Contains(arma))
         {
-            if (arma.GetType() == typeof(Pocion))
+            foreach (object item in personaje.Inventario.ItemsUtilizables)
             {
-                Pocion pocion = (Pocion)arma;
-                VidaActual = pocion.GetVida;
+                if (arma.GetType() == typeof(Pocion))
+                {
+                    Pocion pocion = (Pocion)arma;
+                    VidaActual = pocion.GetVida;
+                }
             }
         }
         if (VidaActual == 0)

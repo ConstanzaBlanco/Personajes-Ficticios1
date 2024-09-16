@@ -7,9 +7,12 @@ public class Inventario
     public List<object> ItemsUtilizables { get; } = new List<object>();
     public void AgregarItem_(object item)
     {
-        if (ItemsUtilizables.Contains(item.GetType()))
+        foreach (object arma in ItemsUtilizables)
         {
-            inventario.Add(item);
+            if (item.GetType()== arma.GetType())
+            {
+                inventario.Add(item);
+            }
         }
     }
 

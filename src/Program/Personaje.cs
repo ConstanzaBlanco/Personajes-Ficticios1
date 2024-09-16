@@ -1,7 +1,7 @@
 ﻿namespace RoleplayGame
 //Creamos esta clase para que tome los valores iniciales de Vida, ataque y defensa del Personaje dependiendo de su tipo.
 //Siendo 1=Mago, 2=Elfo, y 3=Enano.
-//En esta clase tambien podemos modificar el inventario del personaje accediendo a laClase inventario y sus metodos.
+//En esta clase tambien podemos modificar el inventario del personaje accediendo a la Clase inventario y sus metodos.
 //Cumple con SRP ya que tien la unica responsabilidad de conocer el tipo de personaje, sus caracteristicas y su inventario.
 {
     public class Personaje
@@ -13,7 +13,6 @@
         public int Defensa { get; set; }
         
         // Inicializa las listas de objetos
-        public List<object> ItemsUtilizables { get; } = new List<object>();
         public Inventario Inventario { get; } = new Inventario();
         
         public Personaje(string nombre, int tipo)
@@ -26,7 +25,7 @@
                 this.Vida = magonuevo.VidaMago();
                 this.Ataque = magonuevo.AtaqueMago();
                 this.Defensa = magonuevo.DefensaMago();
-                this.ItemsUtilizables.AddRange(magonuevo.ItemsMago());
+                this.Inventario.ItemsUtilizables.AddRange(magonuevo.ItemsMago());
                 this.tipo = "Mago";
             }
             else if (tipo == 2) // Elfo
@@ -37,7 +36,7 @@
                 this.Defensa = elfonuevo.DefensaElfo();
                 
                 // Agrega los ítems del Elfo a la lista
-                this.ItemsUtilizables.AddRange(elfonuevo.ItemsElfo());
+                this.Inventario.ItemsUtilizables.AddRange(elfonuevo.ItemsElfo());
                 this.tipo = "Elfo";
             }
             else if (tipo == 3) // Enano
@@ -48,7 +47,7 @@
                 this.Defensa = enanonuevo.DefensaEnano();
                 
                 // Agrega los ítems del Enano a la lista
-                this.ItemsUtilizables.AddRange(enanonuevo.ItemsEnano());
+                this.Inventario.ItemsUtilizables.AddRange(enanonuevo.ItemsEnano());
                 this.tipo = "Enano";
             }
             else
